@@ -1,8 +1,10 @@
+require('dotenv').config();
+const env=process.env;
 const mongoose=require("mongoose");
 
 const ConnectDataBase=async()=>{
 
-    let result=await mongoose.connect("mongodb://127.0.0.1:27017/Practice");
+    let result=await mongoose.connect(env.DB_CONNECTION_URL);
 
     return result;
 
